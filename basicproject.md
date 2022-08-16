@@ -152,8 +152,21 @@ module.exports = override(
     -   ![img](./assets/img/Capture.PNG)
     3.  Đưa cấu hình router ra ngoài
     4.  Xây dựng cơ chế tải layout
+    - note mỗi cái route ở layout chính ( còn phần upload nó ở trang khác)
+    - phân tích layout : gồm sidebar và header.
+    + phần upload cho layout === null.
+    + nhưng layout có header có 2 cách để làm:
+    - c1: import Header vào file index trong Upload 
+    - xong code nội dung các thẻ chứa <Header/> và div class="content" có Upload
+    + c2: thêm tương tự như Deafaultlayout phần HeaderOnly, bỏ sidebar đi , thêm router phần layout: HeaderOnly; code file Apps.js
+    < note logic phần if(layout)>
 
--
+
+
+
+
+
+
 
 -   Vocabulary:
 
@@ -169,3 +182,34 @@ module.exports = override(
 *   Viết tắt về wrap :
 
 -   phím tắt :<ctrl+shift+P>-> gõ wrap A... -> thẻ cần wrap
+
+
+
+
+
++ Có 2 bước để tạo ra trang mới sau đó work ra trình duyệt:
+- vào page copy tạo ra trang mới tương tự như trang home đã có
+- vào routes nộp nó vào  
+
+
+2. XÂY DỰNG HEADER
+1. Dựng khung layout mặc định:
+- xem để biết user agent: <phương pháp dùng để nhận biết device trên Web>
+- tạo thư mục header.module.scss
+- Cài thư viện classnames: npm i classnames
+- Tạo các file có đuôi module.scss để css riêng lẻ từng phần 
+2. Xây dựng UI phần header :
+- Lấy được logo trên trang tiktok
+- b1: copy outerHTML của logo trên element 
+- b2: dùng phím tắt ctrl+shirf+L : chọn được tất cả những đối tượng giống như đối tượng đã được bôi đen .
+- tạo ra file logo.svg riêng : thêm vào file <xmlns="http://www.w3.org/2000/svg"> mới hiện logo, chỗ file index.js nhớ  .default
+- < note khi tạo ra file svg không hiển thị lên mạng xem cấu trúc file svg ntn thêm các thành phần thiếu vào>
+- spellCheck ={false}
+- Thêm thư viện icon vào.
+
+
+
+
++ PHÍM TẮT:
+- Alt+ mũi tên: di chuyển đoạn code.
+- ctrl+ space : để hiển thị gợi ý
